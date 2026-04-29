@@ -83,7 +83,7 @@ if submitted:
     # Prevent ZeroDivisionError if income is exactly 0
     safe_income = Monthly_Gross_Income if Monthly_Gross_Income != 0 else 0.01
 
-    DTI = Monthly_Housing_Payment / safe_income
+    HPI = Monthly_Housing_Payment / safe_income
     Loan_to_Income_Ratio = requested_loan_amount / safe_income
     Monthly_Disposable_Income = Monthly_Gross_Income - Monthly_Housing_Payment
     Loan_to_Fico_Ratio = requested_loan_amount / FICO_score
@@ -94,7 +94,7 @@ if submitted:
         "FICO_score": [FICO_score],
         "Monthly_Gross_Income": [Monthly_Gross_Income],
         "Monthly_Housing_Payment": [Monthly_Housing_Payment],
-        "DTI": [DTI],
+        "HPI": [HPI],
         "Loan_to_Income_Ratio": [Loan_to_Income_Ratio],
         "Monthly_Disposable_Income": [Monthly_Disposable_Income],
         "Loan_to_Fico_Ratio": [Loan_to_Fico_Ratio],
