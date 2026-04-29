@@ -2,7 +2,7 @@ import streamlit as st
 import pickle
 import pandas as pd
 import sklearn
-
+import time
 
 # Cache the model so it only loads once, saving memory and time
 @st.cache_resource
@@ -106,6 +106,7 @@ if submitted:
 
     # Add a visual spinner while the model runs
     with st.spinner("Analyzing applicant profile..."):
+        time.sleep(1.5)
         try:
             prediction = model.predict(input_data)
 
